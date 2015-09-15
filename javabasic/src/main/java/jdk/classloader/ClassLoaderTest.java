@@ -46,7 +46,7 @@ public class ClassLoaderTest {
 			Class<? extends Object> c = Class.forName("java.lang.Object");
 			cl = c.getClassLoader();
 			System.out.println("java.lang.Object's loader is " + cl);
-			c = Class.forName("com.petertian.jdk.ClassLoaderTest");
+			c = Class.forName("jdk.classloader.ClassLoaderTest");
 			cl = c.getClassLoader();
 			System.out.println(" ClassLoaderTest's loader is " + cl);
 		}catch(Exception e) {
@@ -65,7 +65,7 @@ public class ClassLoaderTest {
 		System.out.println("user.dir="+path);
 		URL[] us = {new URL("file://" + path)};
 		ClassLoader loader = new URLClassLoader(us);
-		Class c = loader.loadClass("com.petertian.jdk.ClassLoaderTest");
+		Class c = loader.loadClass("jdk.classloader.ClassLoaderTest");
 		Object o = c.newInstance();
 		Field f = c.getField("age");
 		int age = f.getInt(o);
